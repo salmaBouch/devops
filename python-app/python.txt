@@ -1,0 +1,41 @@
+2)- Python
+1)-FROM python
+WORKDIR /app
+COPY . /app
+CMD ["python", "bmi.py"]
+$ docker build .
+2)-$ docker run -it 495314c0249a3bfb773a273a711fc06d6a5986668b71a7b3e20289288033968e
+(1) Metric (m, kg) or (2) Non-Metric (ft, pounds)?
+Please choose: 1
+Please enter your height in meters
+Your height: 165
+Please enter your weight in kilograms
+Your weight: 65
+Your body-mass-index: 0.0023875114784205694
+3)-$ docker run -it --name py-container 495314c0249a3bfb773a273a711fc06d6a5986668b71a7b3e20289288033968e
+(1) Metric (m, kg) or (2) Non-Metric (ft, pounds)?
+Please choose: 1
+Please enter your height in meters
+Your height: 165
+Please enter your weight in kilograms
+Your weight: 65
+Your body-mass-index: 0.0023875114784205694
+4)-already stopped
+$ docker start -a -i  py-container
+(1) Metric (m, kg) or (2) Non-Metric (ft, pounds)?
+Please choose: 1
+Please enter your height in meters
+Your height: 165
+Please enter your weight in kilograms
+Your weight: 65
+Your body-mass-index: 0.0023875114784205694
+4)- docker container prune
+5)-$ docker build -t py-image:13  .
+6)-$ docker run -it  --rm --name py1-container py-image
+(1) Metric (m, kg) or (2) Non-Metric (ft, pounds)?
+Please choose: 1
+Please enter your height in meters
+Your height: 165
+Please enter your weight in kilograms
+Your weight: 65
+Your body-mass-index: 0.0023875114784205694

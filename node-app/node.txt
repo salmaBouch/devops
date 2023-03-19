@@ -1,0 +1,22 @@
+1)Node
+Dockerfile:
+FROM node
+WORKDIR /app
+COPY . /app
+RUN npm install
+EXPOSE 3000
+CMD ["node", "server.js"]
+1)- $ docker build .
+2)-
+$ docker run -p 3001:3000 6213ddacfaca0ef671640bd5044f949a94895d345ed3b5bfbb9cba63b0afd4c1
+$ docker ps
+3)-$  docker run -p 3002:3000 --name node-container 6213ddacfaca0ef671640bd5044f949a94895d345ed3b5bfbb9cba63b0afd4c1
+$ docker stop node-container
+node-container
+$ docker start node-container
+node-container
+4)-$ docker container prune
+WARNING! This will remove all stopped containers.
+Are you sure you want to continue? [y/N] y
+5)-$ docker build -t node:3001 .
+6)-$ docker run -p 3007:3000 --rm --name node1-container node
